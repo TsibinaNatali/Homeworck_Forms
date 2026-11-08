@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Carb</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #e8e8e8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100%;
+        padding: 20px;
+      }
+      .card{
+        background-color: #b8d4d4;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+      }
+      .card-header{
+        background-color: #d47836;
+        color: white;
+        padding: 15px 25px;
+        margin-top: 20px;
+        margin-left: -20px;
+        margin-right: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .card-body{
+        padding: 25px;
+      }
+      .form-group{
+        margin-bottom: 20px;
+      }
+      .form-group > label{
+        display: block;
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+      .form-group > input{
+        width: 80%;
+        border: 1px solid #b0d1d1;
+        background: transparent;
+        padding: 8px 5px;
+        box-shadow: 0 4px 15px rgba(90, 142, 167, 0.5);
+        outline: none;
+      }
+      .form-group > input::placeholder{
+        color: #888;
+      }
+      .date-row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+        <div class="card-header">Credit Carb Details</div>
+        <form class="card-body">
+            <div class="form-group">
+                <label for="">Card Number</label>
+                <input type="tel" placeholder="1234 5678 9012 3456" />
+            </div>
+
+            <div class="form-group">
+                <label for="">Name On Card</label>
+                <input type="text" placeholder="Name Surname" />
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="">Expiry Date</label>
+                        <div class="date-row">
+                            <div class="form-group">
+                                <input type="tel" placeholder="02" />
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="2017" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">CVV/CVN</label>
+                                    <div class="form-group">
+                                        <input type="tel" placeholder="***" />
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </form>
+    </div>
+  </body>
+</html>
