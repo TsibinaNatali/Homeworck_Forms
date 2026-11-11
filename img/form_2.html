@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style library</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
+            padding: 30px;
+            color: #333;
+        }
+        .container{
+            background-color: #f5f5f5;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 4px;
+        }
+        .container > h2{
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        .lib-input{
+            padding: 10px 14px;
+            font-size: 14px;
+            border: 1px solid #b1a8a8;
+            outline: none;
+        }
+        .lib-input::placeholder{
+            color: #aaa;
+        }
+        .lib-input.valid{
+            border-color: green;
+        }
+        .lib-input.valid::placeholder{
+            color: green;
+        }
+        .input-wrap{
+            position: relative;
+            display: inline-block;
+        }
+        .icon-check{
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: green;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .icon-cross{
+             position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .lib-input.invalid{
+            border-color: red;
+        }
+        .lib-input.invalid::placeholder{
+            color: red;
+        }
+        /* check */
+        .lib-checkbox{
+            display: none;
+        }
+        .lib-label{
+            display: inline-flex;
+            align-items: center;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        .lib-label .checkmark{
+            width: 40px;
+            height: 20px;
+            border: 2px solid #1b1717;
+            border-radius: 4px;
+            margin-right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lib-checkbox:checked + .lib-label .checkmark.green{
+            background-color: green;
+        }
+        .lib-checkbox:checked + .lib-label .checkmark.red{
+            background-color: red;
+        }
+        /* radio */
+        .lib-radio{
+            display: none;
+        }
+        .lib-label .radiomark{
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lib-radio:checked + .lib-label .radiomark.green{
+            background-color: green;
+        }
+        .lib-radio:checked + .lib-label .radiomark{
+            border: 2px solid green;
+        }
+        /* разноцветные кнопки */
+        .lib-btn{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        .lib-btn-active{
+            background-color: #458145;
+        }
+        .lib-btn-hover{
+            background-color: #126412;
+        }
+        .lib-btn-danger{
+            background-color: #da6c87;
+        }
+        .lib-btn-hover-danger{
+            background-color: #a11034;
+        }
+        .lib-btn-disabled{
+            background-color: #6e6b6c;
+        }
+        .lib-btn-circle{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 30px;
+            font-weight: bold;
+            margin-right: 8px;
+            color: white;
+        }
+        .lib-btn-circle-green{
+            background-color: #60b660;
+        }
+        .lib-btn-circle-red{
+             background-color: #da5073;
+        }
+        .lib-textarea{
+            min-width: 500px;
+            min-height: 100px;
+            max-width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+        .lib-textarea::placeholder{
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>inputs</h2>
+        <!-- обычное поле -->
+        <input type="text" class="lib-input" placeholder="Enter some text">
+        <!-- зеленая галочка -->
+         <div class="input-wrap">
+            <input type="text" class="lib-input valid" placeholder="valid text">
+            <span class="icon-check">✓</span>
+        </div>
+        <!-- красный крестик -->
+         <div class="input-wrap">
+            <input type="text" class="lib-input invalid" placeholder="invalid text">
+            <span class="icon-cross">❌</span>
+        </div>
+
+
+        <h2>Check boxes</h2>
+        <!-- зеленый вкл -->
+        <input type="checkbox" id="sub1"  class="lib-checkbox">
+        <label for="sub1" class="lib-label">
+            <span class="checkmark green"></span>
+            Subscribe
+        </label>
+        <!-- красный выкл -->
+        <input type="checkbox" id="sub2" class="lib-checkbox switched-off">
+        <label for="sub2" class="lib-label">
+            <span class="checkmark red"></span>
+            Subscribe
+        </label>
+
+
+        <h2>Radio buttons</h2>
+        <div>Gender:</div>
+        <!-- выбран -->
+         <input type="radio" id="radio1" class="lib-radio">
+         <label for="radio1" class="lib-label">
+            <span class="radiomark green"></span>
+             Male
+        </label>
+         <!--не выбран -->
+         <input type="radio" id="radio2" class="lib-radio">
+         <label for="radio2" class="lib-label">
+            <span class="radiomark"></span>
+            Female
+        </label>
+         <!-- разноцветные кнопки -->
+          <h2>Buttons</h2>
+          <div class="lib-btn lib-btn-active">Active</div>
+          <div class="lib-btn lib-btn-hover">Hover</div>
+          <div class="lib-btn lib-btn-danger">Danger</div>
+          <div class="lib-btn lib-btn-hover-danger">Hover</div>
+          <div class="lib-btn lib-btn-disabled">Disabled</div>
+          <div class="lib-btn-circle lib-btn-circle-green">+</div>
+          <div class="lib-btn-circle lib-btn-circle-red">-</div>
+          <h2>Text area</h2>
+          <textarea name="" id="" class="lib-textarea" placeholder="Enter some text"></textarea>
+    </div>
+</body>
+</html>
